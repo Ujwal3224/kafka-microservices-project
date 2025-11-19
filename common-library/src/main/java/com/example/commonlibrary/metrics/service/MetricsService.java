@@ -8,7 +8,6 @@ import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Timer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +28,7 @@ public class MetricsService {
 //        this.serviceName = "default-service";
 //        initializeCommonMetrics();
 //    }
-    @Autowired
+
     public MetricsService(MeterRegistry meterRegistry,
                           @Value("${spring.application.name:default-service}") String serviceName) {
         this.meterRegistry = meterRegistry;

@@ -4,13 +4,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 
 @Document(collection = "orders")
 public class Order {
     @Id
-    private UUID id;
+    private String id;
 
     private String productName;
     private Integer quantity;
@@ -21,11 +20,12 @@ public class Order {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public UUID getId() {
+
+    public String getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
 
