@@ -31,6 +31,7 @@ public class OrderService {
 
     public Order createOrder(OrderRequest orderRequest) {
         long startTime = System.currentTimeMillis();
+        metricsService.incrementTotalApiCalls();
 
         try {
             log.info("Creating new order for product: {}", orderRequest.getProductName());
